@@ -16,8 +16,8 @@ namespace LibraryApi.Domain
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Book>().HasData(
-                    new Book { Id = 1, Title = "Walden", Author = "Thoreau" },
-                    new Book { Id = 2, Title = "Nature", Author = "Emerson" }
+                    new Book { Id = 1, Title = "Walden", Author = "Thoreau", Genre = "Philosiphy" },
+                    new Book { Id = 2, Title = "Nature", Author = "Emerson", Genre = "Philosiphy" }
                 );
             modelBuilder.Entity<Book>().Property(p => p.Author).HasMaxLength(200);
         }

@@ -24,12 +24,12 @@ namespace LibraryApi.Migrations
             migrationBuilder.InsertData(
                 table: "Books",
                 columns: new[] { "Id", "Author", "Genre", "Title" },
-                values: new object[] { 1, "Thoreau", null, "Walden" });
+                values: new object[] { 1, "Thoreau", "Philosiphy", "Walden" });
 
             migrationBuilder.InsertData(
                 table: "Books",
                 columns: new[] { "Id", "Author", "Genre", "Title" },
-                values: new object[] { 2, "Emerson", null, "Nature" });
+                values: new object[] { 2, "Emerson", "Philosiphy", "Nature" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
