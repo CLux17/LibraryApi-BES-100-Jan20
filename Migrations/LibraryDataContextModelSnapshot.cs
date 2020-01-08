@@ -44,13 +44,15 @@ namespace LibraryApi.Migrations
                         {
                             Id = 1,
                             Author = "Thoreau",
-                            Title = "Walden"
+                            Title = "Walden",
+                            Genre = "Philosiphy"
                         },
                         new
                         {
                             Id = 2,
                             Author = "Emerson",
-                            Title = "Nature"
+                            Title = "Nature",
+                            Genre = "Philosiphy"
                         });
                 });
 #pragma warning restore 612, 618
