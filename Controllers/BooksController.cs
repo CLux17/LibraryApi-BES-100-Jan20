@@ -1,4 +1,5 @@
 ﻿using LibraryApi.Domain;
+using LibraryApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,15 @@ namespace LibraryApi.Controllers
         [HttpGet("/books")]
         public IActionResult GetAllBooks()
         {
-            return Ok(Context.Books.ToList());
+            var response = new GetBooksResponseCollection();
+            response.Books = Context.Books.Select(b => new BookSummaryItem
+            {
+                Id = b.Id,
+                Title = b.Title,
+                Author = b.Author,
+                Genre = b.Genre
+            }).ToList();
+            return Ok(response);
         }
     }
 }
