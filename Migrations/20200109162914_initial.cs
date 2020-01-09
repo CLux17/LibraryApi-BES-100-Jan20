@@ -14,7 +14,8 @@ namespace LibraryApi.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(nullable: true),
                     Author = table.Column<string>(maxLength: 200, nullable: true),
-                    Genre = table.Column<string>(nullable: true)
+                    Genre = table.Column<string>(nullable: true),
+                    InInventory = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -23,13 +24,13 @@ namespace LibraryApi.Migrations
 
             migrationBuilder.InsertData(
                 table: "Books",
-                columns: new[] { "Id", "Author", "Genre", "Title" },
-                values: new object[] { 1, "Thoreau", "Philosiphy", "Walden" });
+                columns: new[] { "Id", "Author", "Genre", "InInventory", "Title" },
+                values: new object[] { 1, "Thoreau", "Philosophy", true, "Walden" });
 
             migrationBuilder.InsertData(
                 table: "Books",
-                columns: new[] { "Id", "Author", "Genre", "Title" },
-                values: new object[] { 2, "Emerson", "Philosiphy", "Nature" });
+                columns: new[] { "Id", "Author", "Genre", "InInventory", "Title" },
+                values: new object[] { 2, "Emerson", "Philosophy", true, "Nature" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

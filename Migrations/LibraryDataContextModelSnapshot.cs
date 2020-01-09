@@ -32,6 +32,9 @@ namespace LibraryApi.Migrations
                     b.Property<string>("Genre")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("InInventory")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
@@ -44,15 +47,17 @@ namespace LibraryApi.Migrations
                         {
                             Id = 1,
                             Author = "Thoreau",
-                            Title = "Walden",
-                            Genre = "Philosiphy"
+                            Genre = "Philosophy",
+                            InInventory = true,
+                            Title = "Walden"
                         },
                         new
                         {
                             Id = 2,
                             Author = "Emerson",
-                            Title = "Nature",
-                            Genre = "Philosiphy"
+                            Genre = "Philosophy",
+                            InInventory = true,
+                            Title = "Nature"
                         });
                 });
 #pragma warning restore 612, 618

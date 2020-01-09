@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LibraryApi.Migrations
 {
     [DbContext(typeof(LibraryDataContext))]
-    [Migration("20200108190715_initial")]
+    [Migration("20200109162914_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,6 +34,9 @@ namespace LibraryApi.Migrations
                     b.Property<string>("Genre")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("InInventory")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
@@ -46,12 +49,16 @@ namespace LibraryApi.Migrations
                         {
                             Id = 1,
                             Author = "Thoreau",
+                            Genre = "Philosophy",
+                            InInventory = true,
                             Title = "Walden"
                         },
                         new
                         {
                             Id = 2,
                             Author = "Emerson",
+                            Genre = "Philosophy",
+                            InInventory = true,
                             Title = "Nature"
                         });
                 });
