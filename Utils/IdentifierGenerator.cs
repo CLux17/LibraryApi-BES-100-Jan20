@@ -9,6 +9,7 @@ namespace LibraryApi.Utils
     {
         public Guid GetEnrollmentId()
         {
+            
             return Guid.NewGuid();
         }
     }
